@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+    <section class="intro">
+        {% for item in page.gallery_images.all %}
+            {% image item.image fill-1200x400 %}
+        {% endfor %}
+        <div class="wrapper_section">
+            <h1>{{ page.title }}</h1>
+
+            <div class="istxt">{{ page.intro|richtext }}</div>
+        </div>
+    </section>
+    <section class="listing_articles">
+        <div class="wrapper_section">
+            {% for post in page.get_children %}
+                <article>
+                    {% if post.image %}
+                    <img src="" alt="">
+                    {% endif %}
+                    <div class="texte">
+                        <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+                        {{ post.specific.intro }}
+                        <a class="lien" href="{% pageurl post %}">Voir plus</a>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

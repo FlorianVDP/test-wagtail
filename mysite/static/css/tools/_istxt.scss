@@ -1,0 +1,39 @@
+.istxt {
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+
+  h1 {
+    font-size: 2em;
+    margin: 1em 0;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin: 1em 0;
+  }
+
+  h3 {
+    font-size: 1.25em;
+    color: $secondColor;
+    margin: 1em 0;
+  }
+
+  p {
+    line-height: 1.25em;
+  }
+
+  ul {
+    margin: 1em 0;
+    padding-left: 1em;
+    list-style: disc;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+
+    li {
+
+    }
+  }
+}

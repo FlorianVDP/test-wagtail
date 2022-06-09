@@ -1,0 +1,15 @@
+a.lien {
+  text-decoration: none;
+  display: inline-block;
+  align-self: center;
+  color: $black;
+  padding: .25em 1em;
+  border: 1px solid rgba($black, .5);
+  border-radius: 100px;
+  transition: all ease-in 150ms;
+  opacity: .75;
+
+  &:hover, &:focus {
+    opacity: 1;
+  }
+}

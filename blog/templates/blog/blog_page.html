@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+    <section class="intro">
+        {% for item in page.gallery_images.all %}
+            {% image item.image fill-1200x400 %}
+        {% endfor %}
+        <div class="wrapper_section">
+            <h1>{{ page.title }}</h1>
+        </div>
+    </section>
+    <section class="content">
+    <div class="wrapper_section">
+        <div class="istxt">
+            {{ page.body|richtext }}
+        </div>
+    </div>
+    </section>
+
+    <a class="lien" href="{{ page.get_parent.url }}">Retour au blog</a>
+
+{% endblock %}

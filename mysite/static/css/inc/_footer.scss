@@ -1,0 +1,20 @@
+footer{
+  height: 20vh;
+  background: $mainColor;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1em;
+  margin-top: 4em;
+  div.wrapper-footer{
+    p{
+      color: $white;
+      font-size: .75em;
+      a{
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {% load static wagtailcore_tags wagtailuserbar %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
         <title>
@@ -15,6 +15,8 @@
         </title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="{% static 'images/logo.jpeg' %}" />
+
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
@@ -23,11 +25,21 @@
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
     </head>
-
+    <header>
+        <div class="wrapper-header">
+            <a class="logo" href="/"><img src="{% static 'images/logo.jpeg' %}" alt="retour accueil"></a>
+            <nav>
+                <a href="/mon-super-blog">Blog</a>
+                <a href="/" class="lien">Contact</a>
+            </nav>
+        </div>
+    </header>
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        <main>
+            {% block content %}{% endblock %}
+        </main>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
@@ -36,4 +48,9 @@
         {# Override this in templates to add extra javascript #}
         {% endblock %}
     </body>
+<footer>
+    <div class="wrapper-footer">
+        <p>créé par <a href="https://www.linkedin.com/in/florian-vander-put" target="_blank">Florian Van der Put</a></p>
+    </div>
+</footer>
 </html>
